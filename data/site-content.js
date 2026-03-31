@@ -1,0 +1,170 @@
+window.SITE_CONTENT = {
+  brand: {
+    siteName: "Maguro to Shari Asakusa",
+    siteNameJa: "まぐろとシャリ 浅草",
+    siteNameKo: "마구로토 샤리 아사쿠사",
+    taglineEn: "A modern Japanese counter experience built around premium maguro and akazu rice.",
+    taglineJa: "本鮪と赤酢シャリを軸にした、モダンな和のカウンター体験。",
+    taglineKo: "프리미엄 참치와 아카즈 식초 샤리를 중심으로 한 모던 일본 카운터 다이닝.",
+    summaryEn: "We are a small, counter-style restaurant focused on premium maguro bowls. Our approach is simple: quality ingredients, clean presentation, and a calm dining experience.",
+    summaryJa: "私たちはプレミアムまぐろ丼にこだわる、小さなカウンタースタイルのレストランです。上質な食材、端正な盛り付け、落ち着いた食体験を大切にしています。",
+    summaryKo: "저희는 프리미엄 참치 덮밥에 집중하는 작은 카운터 스타일 레스토랑입니다. 좋은 재료, 깔끔한 표현, 차분한 식사 경험을 소중히 합니다.",
+    conceptLineEn: "Walk-in first. Limited priority reservations are available through premium bowl pre-orders.",
+    conceptLineJa: "ウォークイン優先。プレミアム丼の事前注文による限定優先予約をご用意しています。",
+    conceptLineKo: "워킹인 우선 운영이며, 프리미엄 볼 사전 주문을 통한 한정 우선 예약만 가능합니다."
+  },
+  business: {
+    addressEn: "〒111-0032 Tokyo, Taito City, Asakusa, 1 Chome-42-4 Hulic Asakusa 1-chome Building 1F",
+    addressJa: "〒111-0032 東京都台東区浅草1丁目42-4 ヒューリック浅草1丁目ビル 1階",
+    addressKo: "〒111-0032 도쿄도 다이토구 아사쿠사 1초메 42-4 힐릭 아사쿠사 1초메 빌딩 1층",
+    hoursEn: "10:30 am - 9:30 pm",
+    hoursJa: "10:30 am - 9:30pm",
+    hoursKo: "10:30 am - 9:30 pm",
+    contactEn: "asakusa.contact@maguroshari.com",
+    contactJa: "asakusa.contact@maguroshari.com",
+    contactKo: "asakusa.contact@maguroshari.com",
+    mapUrl: "https://maps.google.com/?q=%E3%80%92111-0032+%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8F%B0%E6%9D%B1%E5%8C%BA%E6%B5%85%E8%8D%891%E4%B8%81%E7%9B%AE42-4",
+    contactNoteEn: "Reservation requests are reviewed manually.",
+    contactNoteJa: "予約リクエストは手動で確認します。",
+    contactNoteKo: "예약 요청은 수동으로 확인합니다."
+  },
+  locations: [
+    { nameEn: "Asakusa", nameJa: "浅草", nameKo: "아사쿠사", primary: true },
+    { nameEn: "Shibuya", nameJa: "渋谷", nameKo: "시부야", primary: false },
+    { nameEn: "Roppongi", nameJa: "六本木", nameKo: "롯폰기", primary: false }
+  ],
+  premiumBowls: [
+    {
+      id: "ryugu-bowl",
+      nameEn: "Ryugu Bowl",
+      nameJa: "竜宮",
+      nameKo: "류구",
+      descriptionEn: "4 slices lean tuna, 3 slices medium fatty tuna, 3 slices fatty tuna, 4 slices salmon, 20g minced tuna, 20g minced salmon, sushi rice",
+      descriptionJa: "赤身4枚、中トロ3枚、大トロ3枚、サーモン4枚、まぐろたたき20g、サーモンたたき20g、シャリ",
+      descriptionKo: "참치 붉은살 4점, 중뱃살 3점, 대뱃살 3점, 연어 4점, 다진 참치 20g, 다진 연어 20g, 샤리",
+      price: "¥6,500",
+      tagEn: "Premium",
+      tagJa: "プレミアム",
+      tagKo: "프리미엄",
+      image: "assets/images/Bowls_Ryugu Bowl.jpg"
+    },
+    {
+      id: "kaiho-bowl",
+      nameEn: "Kaiho Bowl",
+      nameJa: "海宝",
+      nameKo: "카이호",
+      descriptionEn: "4 slices lean tuna, 4 slices medium fatty tuna, 4 slices fatty tuna, 30g salmon roe, 20g sea urchin, sushi rice",
+      descriptionJa: "赤身4枚、中トロ4枚、大トロ4枚、いくら30g、うに20g、シャリ",
+      descriptionKo: "참치 붉은살 4점, 중뱃살 4점, 대뱃살 4점, 연어알 30g, 성게 20g, 샤리",
+      price: "¥7,500",
+      tagEn: "Exclusive",
+      tagJa: "特別",
+      tagKo: "특별",
+      image: "assets/images/Bowls_Kaiho Bowl.jpg"
+    },
+    {
+      id: "luxurious-maguro-shari",
+      nameEn: "Luxurious Maguro Shari",
+      nameJa: "贅沢まぐしゃり",
+      nameKo: "호화 마구샤리",
+      descriptionEn: "4 slices lean tuna, 2 slices medium fatty tuna, 2 slices fatty tuna, 10g minced tuna, 10g salmon roe, 1 kani stick, 10g chopped green onion",
+      descriptionJa: "赤身4枚、中トロ2枚、大トロ2枚、まぐろたたき10g、いくら10g、カニ1本、ねぎ10g",
+      descriptionKo: "참치 붉은살 4점, 중뱃살 2점, 대뱃살 2점, 다진 참치 10g, 연어알 10g, 게살 1개, 다진 파 10g",
+      price: "¥5,400",
+      tagEn: "Signature",
+      tagJa: "看板",
+      tagKo: "시그니처",
+      image: "assets/images/Bowls_Luxurious Maguro Shari.jpg"
+    },
+    {
+      id: "magushari-three-color-premium",
+      nameEn: "Magushari Three-Color Bowl (Premium)",
+      nameJa: "まぐしゃり3色丼 上",
+      nameKo: "마구샤리 3색 덮밥 상",
+      descriptionEn: "3 slices lean tuna, 3 slices medium fatty tuna, 2 slices fatty tuna, 10g minced tuna, sushi rice",
+      descriptionJa: "赤身3枚、中トロ3枚、大トロ2枚、まぐろたたき10g、シャリ",
+      descriptionKo: "참치 붉은살 3점, 중뱃살 3점, 대뱃살 2점, 다진 참치 10g, 샤리",
+      price: "¥3,800",
+      tagEn: "Variety",
+      tagJa: "3色",
+      tagKo: "3색",
+      image: "assets/images/Bowls_Magushari Three_Color Bowl_(Premium).jpg"
+    },
+    {
+      id: "magushari-three-color-deluxe",
+      nameEn: "Magushari Three-Color Bowl (Deluxe)",
+      nameJa: "まぐしゃり3色丼 特上",
+      nameKo: "마구샤리 3색 덮밥 특상",
+      descriptionEn: "4 slices lean tuna, 4 slices medium fatty tuna, 2 slices fatty tuna, 10g minced tuna, sushi rice",
+      descriptionJa: "赤身4枚、中トロ4枚、大トロ2枚、まぐろたたき10g、シャリ",
+      descriptionKo: "참치 붉은살 4점, 중뱃살 4점, 대뱃살 2점, 다진 참치 10g, 샤리",
+      price: "¥4,600",
+      tagEn: "Deluxe",
+      tagJa: "特上",
+      tagKo: "특상",
+      image: "assets/images/Bowls_Magushari Three_Color Bowl_Deluxe.jpg"
+    },
+    {
+      id: "tuna-salmon-ultimate",
+      nameEn: "Tuna and Salmon Bowl (Ultimate)",
+      nameJa: "まぐろサーモン丼 極",
+      nameKo: "참치 연어 덮밥 극",
+      descriptionEn: "4 slices salmon, 2 slices medium fatty tuna, 2 slices fatty tuna, 10g minced tuna, sushi rice",
+      descriptionJa: "サーモン4枚、中トロ2枚、大トロ2枚、まぐろたたき10g、シャリ",
+      descriptionKo: "연어 4점, 중뱃살 2점, 대뱃살 2점, 다진 참치 10g, 샤리",
+      price: "¥3,800",
+      tagEn: "Popular",
+      tagJa: "人気",
+      tagKo: "인기",
+      image: "assets/images/Bowls_Tuna and Salmon Bowl_Ultimate.jpg"
+    }
+  ],
+  toppings: [
+    { id: "lean-tuna", nameEn: "Lean Tuna (1 Slice)", nameJa: "まぐろ赤身1枚", nameKo: "참치 붉은살 1점", price: "¥300" },
+    { id: "medium-fatty-tuna", nameEn: "Medium Fatty Tuna (1 Slice)", nameJa: "まぐろ中トロ1枚", nameKo: "참치 중뱃살 1점", price: "¥400" },
+    { id: "fatty-tuna", nameEn: "Fatty Tuna (1 Slice)", nameJa: "まぐろ大トロ1枚", nameKo: "참치 대뱃살 1점", price: "¥450" },
+    { id: "salmon-slice", nameEn: "Salmon (1 Slice)", nameJa: "サーモン1枚", nameKo: "연어 1점", price: "¥250" },
+    { id: "sea-urchin", nameEn: "Sea Urchin", nameJa: "雲丹", nameKo: "성게", price: "¥1,200" },
+    { id: "kujo-green-onions", nameEn: "Kujo Green Onions", nameJa: "九条ねぎ", nameKo: "구조 파", price: "¥180" },
+    { id: "salmon-roe", nameEn: "Salmon Roe", nameJa: "いくら", nameKo: "연어알", price: "¥650" },
+    { id: "king-crab", nameEn: "King Crab", nameJa: "カニバラ", nameKo: "킹크랩", price: "¥650" },
+    { id: "seaweed", nameEn: "4 Sheets of Seaweed", nameJa: "のり4枚", nameKo: "김 4장", price: "¥160" },
+    { id: "egg-yolk", nameEn: "Egg Yolk", nameJa: "卵黄", nameKo: "달걀노른자", price: "¥160" },
+    { id: "natto", nameEn: "Natto", nameJa: "納豆", nameKo: "낫토", price: "¥120" },
+    { id: "grated-yam", nameEn: "Grated Yam", nameJa: "とろろ", nameKo: "마", price: "¥180" }
+  ],
+  drinks: [
+    { id: "orange-juice", nameEn: "Orange Juice", nameJa: "オレンジジュース", nameKo: "오렌지 주스", price: "¥390" },
+    { id: "oolong-tea", nameEn: "Oolong Tea", nameJa: "烏龍茶", nameKo: "우롱차", price: "¥390" },
+    { id: "rooibos-tea", nameEn: "Rooibos Tea", nameJa: "ルイボスティー", nameKo: "루이보스 티", price: "¥390" },
+    { id: "coca-cola", nameEn: "Coca-Cola", nameJa: "コカコーラ", nameKo: "코카콜라", price: "¥450" },
+    { id: "kyoto-yuzu-cider", nameEn: "Kyoto Yuzu Cider", nameJa: "京都柚子サイダー", nameKo: "교토 유자 사이다", price: "¥850" },
+    { id: "hakkaisan", nameEn: "Hakkaisan", nameJa: "八海山", nameKo: "핫카이산", price: "¥600" },
+    { id: "asabiraki", nameEn: "Asabiraki", nameJa: "あさ開", nameKo: "아사비라키", price: "¥900" },
+    { id: "asahi-beer", nameEn: "Asahi Beer", nameJa: "朝日", nameKo: "아사히", price: "¥600" },
+    { id: "kirin-lager", nameEn: "Kirin Lager Beer", nameJa: "キリン ラガー", nameKo: "기린 라거", price: "¥600" },
+    { id: "kirin-ichiban", nameEn: "Kirin Ichiban Beer", nameJa: "キリン一番搾り", nameKo: "기린 이치방", price: "¥800" },
+    { id: "sapporo-ebisu", nameEn: "Sapporo Ebisu Beer", nameJa: "サッポロ エビス", nameKo: "삿포로 에비스", price: "¥800" }
+  ],
+  timeSlots: [],
+  bookingRules: {
+    slotCapacityDefault: 4,
+    advanceBookingDays: 14,
+    closedDays: [],
+    openingTime: "10:30",
+    lastOrderTime: "21:00",
+    lastBookingTime: "20:45",
+    slotMinutes: 5,
+    blockedRanges: [
+      ["11:30", "14:30"]
+    ]
+  },
+  reservation: {
+    walkInFirstEn: "Walk-ins remain the primary dining format.",
+    walkInFirstJa: "ご案内はウォークイン優先です。",
+    walkInFirstKo: "기본 운영은 워킹인 우선입니다.",
+    pendingNoticeEn: "We’ll get back to you shortly. Please check your email (including spam/junk).",
+    pendingNoticeJa: "まもなくご連絡します。メール（迷惑メールフォルダを含む）をご確認ください。",
+    pendingNoticeKo: "곧 연락드리겠습니다. 스팸/정크 메일함을 포함해 이메일을 확인해 주세요."
+  }
+};

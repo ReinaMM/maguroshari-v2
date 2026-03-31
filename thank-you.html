@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ありがとうございます — まぐろとシャリ 浅草</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">まぐろとシャリ 浅草</a>
+      <nav class="nav">
+        <a href="index.html" data-en="Home" data-ja="ホーム" data-ko="홈">ホーム</a>
+        <a href="about.html" data-en="About" data-ja="ご紹介" data-ko="소개">ご紹介</a>
+        <a href="menu.html" data-en="Menu" data-ja="メニュー" data-ko="메뉴">メニュー</a>
+        <a href="reserve.html" data-en="Reserve" data-ja="予約" data-ko="예약">予約</a>
+      </nav>
+      <button class="btn" type="button" data-lang-toggle>EN</button>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="panel">
+        <h1 data-en="Thank you" data-ja="ありがとうございます" data-ko="감사합니다">ありがとうございます</h1>
+        <p data-en="Your reservation request has been received." data-ja="予約リクエストを受け付けました。" data-ko="예약 요청이 접수되었습니다.">予約リクエストを受け付けました。</p>
+        <div class="notice" id="thankYouNotice"></div>
+        <div id="requestSummary" class="section"></div>
+        <div class="cta-row">
+          <a href="index.html" class="btn" data-en="Back to Home" data-ja="ホームへ戻る" data-ko="홈으로">ホームへ戻る</a>
+          <a href="menu.html" class="btn" data-en="View Menu" data-ja="メニューを見る" data-ko="메뉴 보기">メニューを見る</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>まぐろとシャリ 浅草</div>
+      <div class="muted" data-en="Asakusa Main Store" data-ja="浅草本店" data-ko="아사쿠사 본점">浅草本店</div>
+    </div>
+  </footer>
+
+  <script src="data/site-content.js"></script>
+  <script src="assets/js/site.js"></script>
+  <script>
+    function renderThankYou() {
+      const raw = sessionStorage.getItem('mtsReservationDraft');
+      const host = document.getElementById('requestSummary');
+      const notice = document.getElementById('thankYouNotice');
+      notice.textContent = window.MTS.textFor(window.SITE_CONTENT.reservation, 'pendingNotice');
+      if (!raw || !host) return;
+      const data = JSON.parse(raw);
+      host.innerHTML = `
+        <div class="panel">
+          <h2>${window.MTS.state.lang === 'ja' ? 'リクエスト概要' : window.MTS.state.lang === 'ko' ? '요청 요약' : 'Request Summary'}</h2>
+          <p><strong>${window.MTS.state.lang === 'ja' ? 'お名前' : window.MTS.state.lang === 'ko' ? '성함' : 'Name'}:</strong> ${data.fullName}</p>
+          <p><strong>${window.MTS.state.lang === 'ja' ? '人数' : window.MTS.state.lang === 'ko' ? '인원' : 'Party Size'}:</strong> ${data.partySize}</p>
+          <p><strong>${window.MTS.state.lang === 'ja' ? '日付' : window.MTS.state.lang === 'ko' ? '날짜' : 'Date'}:</strong> ${data.reservationDate}</p>
+          <p><strong>${window.MTS.state.lang === 'ja' ? '到着時間' : window.MTS.state.lang === 'ko' ? '도착 시간' : 'Arrival Time'}:</strong> ${data.arrivalTime}</p>
+        </div>
+      `;
+    }
+    document.addEventListener('DOMContentLoaded', renderThankYou);
+    document.addEventListener('mts:language-change', renderThankYou);
+  </script>
+</body>
+</html>
