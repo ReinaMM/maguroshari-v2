@@ -63,6 +63,7 @@
       bowlId: item.id,
       toppings: [],
       drinkId: '',
+      riceSize: 'medium',
       note: '',
       qty: 1
     };
@@ -106,7 +107,7 @@
     const host = byId('premiumSelection');
     if (!host) return;
     host.innerHTML = window.SITE_CONTENT.premiumBowls.map(item => {
-      const selected = state.order.find(entry => entry.bowlId === item.id) || { toppings: [], drinkId: '', note: '' };
+      const selected = state.order.find(entry => entry.bowlId === item.id) || { toppings: [], drinkId: '', riceSize: 'medium', note: '' };
       const expanded = state.openId === item.id;
       return `
         <article class="card menu-card">
@@ -132,6 +133,14 @@
                 </select>
               </label>
               <label>
+                <span>${t('ご飯の量', 'Rice Size', '밥 양')}</span>
+                <select data-bowl-rice-size="${item.id}">
+                  <option value="small" ${selected.riceSize === 'small' ? 'selected' : ''}>${t('小 140g', 'Small 140g', '소 140g')}</option>
+                  <option value="medium" ${selected.riceSize === 'medium' ? 'selected' : ''}>${t('普通 160g（デフォルト）', 'Medium 160g (default)', '중 160g (기본)')}</option>
+                  <option value="large" ${selected.riceSize === 'large' ? 'selected' : ''}>${t('大 180g', 'Large 180g', '대 180g')}</option>
+                </select>
+              </label>
+              <label>
                 <span>${t('メモ', 'Note', '메모')}</span>
                 <input type="text" data-bowl-note="${item.id}" value="${selected.note || ''}" placeholder="${t('例：わさび抜き', 'e.g. no wasabi', '예: 와사비 제외')}">
               </label>
@@ -154,10 +163,12 @@
         const bowlId = btn.dataset.addBowl;
         const toppings = Array.from(host.querySelectorAll(`[data-bowl-toppings="${bowlId}"] input:checked`)).map(el => el.value);
         const drinkId = host.querySelector(`[data-bowl-drink="${bowlId}"]`)?.value || '';
+        const riceSize = host.querySelector(`[data-bowl-rice-size="${bowlId}"]`)?.value || 'medium';
         const note = host.querySelector(`[data-bowl-note="${bowlId}"]`)?.value || '';
         const entry = createOrderItem(window.SITE_CONTENT.premiumBowls.find(item => item.id === bowlId));
         entry.toppings = toppings;
         entry.drinkId = drinkId;
+        entry.riceSize = riceSize;
         entry.note = note;
         state.order.push(entry);
         renderAll();
@@ -176,6 +187,11 @@
       const bowl = window.SITE_CONTENT.premiumBowls.find(item => item.id === entry.bowlId);
       const toppings = entry.toppings.map(id => itemName(window.SITE_CONTENT.toppings.find(item => item.id === id))).join(', ') || t('なし', 'None', '없음');
       const drink = entry.drinkId ? itemName(window.SITE_CONTENT.drinks.find(item => item.id === entry.drinkId)) : t('なし', 'None', '없음');
+      const riceSize = entry.riceSize === 'small'
+        ? t('小 140g', 'Small 140g', '소 140g')
+        : entry.riceSize === 'large'
+          ? t('大 180g', 'Large 180g', '대 180g')
+          : t('普通 160g', 'Medium 160g', '중 160g');
       return `
         <div class="selection-item">
           <div class="price-row">
@@ -191,6 +207,7 @@
           </div>
           <div>${t('トッピング', 'Toppings', '토핑')}: ${toppings}</div>
           <div>${t('ドリンク', 'Drink', '음료')}: ${drink}</div>
+          <div>${t('ご飯の量', 'Rice Size', '밥 양')}: ${riceSize}</div>
           ${entry.note ? `<div>${t('メモ', 'Note', '메모')}: ${entry.note}</div>` : ''}
         </div>
       `;
@@ -226,6 +243,11 @@
         bowlName: itemName(window.SITE_CONTENT.premiumBowls.find(item => item.id === entry.bowlId)),
         toppings: entry.toppings.map(id => itemName(window.SITE_CONTENT.toppings.find(item => item.id === id))),
         drink: entry.drinkId ? itemName(window.SITE_CONTENT.drinks.find(item => item.id === entry.drinkId)) : '',
+        riceSize: entry.riceSize === 'small'
+          ? t('小 140g', 'Small 140g', '소 140g')
+          : entry.riceSize === 'large'
+            ? t('大 180g', 'Large 180g', '대 180g')
+            : t('普通 160g', 'Medium 160g', '중 160g'),
         quantity: entry.qty,
         note: entry.note
       }))
